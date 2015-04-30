@@ -1,0 +1,54 @@
+#!/usr/bin/env python3
+
+import colors as c
+import random as random
+
+answers = [
+    c.green + 'Yes.' + c.reset,
+    c.green + 'It is certain.' + c.reset,
+    c.green + 'It is decidedly so.' + c.reset,
+    c.green + 'Without a doubt.' + c.reset,
+    c.green + 'Yes, definitely.' + c.reset,
+    c.green + 'You may rely on it.' + c.reset,
+    c.green + 'As I see it, yes.' + c.reset,
+    c.green + 'Most likely.' + c.reset,
+    c.green + 'Outlook good.' + c.reset,
+    c.green + 'Signs point to yes.' +  c.reset,
+    c.red + 'My sources say no.' + c.reset,
+    c.red + 'Outlook not so good.' + c.reset,
+    c.red + 'Very doubtful.' + c.reset,
+    c.red + 'My reply is no.' + c.reset,
+    c.red + "Don't count on it." + c.reset,
+    c.blue + 'Ask again later.' + c.reset,
+    c.blue + 'Reply hazy, try again.' + c.reset,
+    c.blue + 'Better not tell you now.' + c.reset,
+    c.blue + 'Cannot predict now.' + c.reset,
+    c.blue + 'Concentrate and ask again.' + c.reset,
+    c.magenta + 'No' + c.reset
+]
+
+print(c.clear)
+print(c.green)
+print("""
+Welcome to Sebastian's Eight Ball Program!
+You Can Ask Any Question To This Program, Not Just Yes or No Questions
+Enter your Question below.
+""")
+print(c.reset)
+
+
+while True:
+    question = input('--> ' + c.green).strip().lower()
+    print(c.reset,end='')
+    if question in ['bye','goodbye']:
+        print('Okay, goodbye. Have a nice day.')
+        exit()
+    elif 'problem' in question:
+        print('No')
+        continue
+    elif question in ['is', 'who', 'am', 'why', 'how', 'can', 'does', 'where', 'when']:
+        print("No, I will not answer that question. Leave, and do something else with your life than just sitting in front of a monitor all day.")
+        continue
+    else:
+        answer = random.choice(answers)
+        print(c.random_color() + answer + c.reset)
